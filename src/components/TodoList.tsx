@@ -1,16 +1,23 @@
-import React from 'react'
+import React from 'react';
 
 interface TodoListProps {
-  items: {id: string, text: string}[]
+  items: { id: string; text: string }[];
+  onDeleteTodo: (id: string) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = props => {
-  
+const TodoList: React.FC<TodoListProps> = (props) => {
   return (
     <ul>
-      {props.items.map(item => <li key={item.id}>{item.text}</li>)}
+      {props.items.map((item) => (
+        <li key={item.id}>
+          <span>{item.text}</span>
+          <button onClick={props.onDeleteTodo.bind(null, item.id)}>
+            Delete Todo
+          </button>
+        </li>
+      ))}
     </ul>
-  )
-}
+  );
+};
 
-export default TodoList
+export default TodoList;
