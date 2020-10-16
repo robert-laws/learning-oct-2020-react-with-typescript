@@ -32,7 +32,7 @@ function App() {
       <p>{numVal} is {typeof numVal} type.</p>
       <p>{boolVal.toString()} is {typeof boolVal} type.</p>
       <hr/>
-      <Message message='this is a simple message' person='Hal Hope' />
+      <Message  />
     </div>
   );
 }
